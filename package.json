@@ -11,6 +11,12 @@
   "author": "Anton Suslenkov",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
@@ -19,6 +25,7 @@
     "body-parser": "^1.20.2",
     "celebrate": "^15.0.1",
     "dotenv": "^16.3.1",
+    "eslint-config-airbnb-base": "^15.0.0",
     "express": "^4.18.2",
     "express-rate-limit": "^6.8.0",
     "express-winston": "^4.2.0",

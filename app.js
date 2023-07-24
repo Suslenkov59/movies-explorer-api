@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const {errors} = require('celebrate');
 
-const {PORT, NODE_ENV} = process.env;
+const {PORT, NODE_ENV, DATABASEURL} = process.env;
 const {requestLogger, errorLogger} = require('./middlewares/logger');
 const limiter = require('./middlewares/rateLimit');
 const cors = require('./middlewares/cors');
@@ -14,7 +14,9 @@ const {handleError} = require('./utils/handleError');
 
 const app = express();
 
-mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
+const {mongodbUrl} = require('./utils/constants')
+
+mongoose.connect(NODE_ENV === 'production' ? DATABASEURL : mongodbUrl)
 
 app.use(helmet());
 app.use(bodyParser.json());
